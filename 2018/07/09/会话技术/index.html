@@ -19,7 +19,7 @@
 <meta property="og:image" content="http://pbiy9ehtb.bkt.clouddn.com/%E7%AC%94%E8%AE%B0%E5%9B%BE-7.2session%E6%8A%80%E6%9C%AF%E5%8E%9F%E7%90%86.png">
 <meta property="og:image" content="http://pbiy9ehtb.bkt.clouddn.com/%E7%AC%94%E8%AE%B0%E5%9B%BE-7.3session%E4%BC%9A%E8%AF%9D%E6%95%B0%E6%8D%AE%E4%B8%8E$_csession%E5%8F%98%E9%87%8F%E7%9A%84%E5%85%B3%E7%B3%BB.png">
 <meta property="og:image" content="http://pbiy9ehtb.bkt.clouddn.com/%E7%AC%94%E8%AE%B0%E5%9B%BE7.4session%E5%B1%9E%E6%80%A7%E8%AE%BE%E7%BD%AE.png">
-<meta property="og:updated_time" content="2018-07-09T14:54:46.226Z">
+<meta property="og:updated_time" content="2018-07-10T08:46:44.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="会话技术">
 <meta name="twitter:description" content="会话技术会话技术可以解决的问题  访问网站走的是HTTP协议，协议具有无连接无状态的特性，对事物的处理不具有记忆能力 在web项目中，很多时候需要将会话数据记忆存储，以便后续的程序能够随时调用和使用   会话技术是什么  在web访问过程中，使访问产生的数据持久化存储的一种技术   会话技术的分类  COOKIE技术 SESSION技术   COOKIE技术COOKIE技术是神马  将数据持久化存">
@@ -148,7 +148,7 @@
 <blockquote>
 <p><strong>注意点:</strong></p>
 <ul>
-<li>只有当执行程序之前，$_COOKIE才会被PHP操作一次，将浏览器携带过来的所有COOKIE数据赋值给$_COOKIE数组；</li>
+<li>只有当执行程序之前，$_COOKIE才会被PHP操作一次，将浏览器携带过来的所有COOKIE数据赋值给\$_COOKIE数组；</li>
 <li>( setcookie 函数间接操作 $_COOKIE ) setcookie函数与 \$_COOKIE没有直接的操作关系，setcookie函数只有一个作用，在本次接下来响应浏览器的过程中负责告诉浏览器将要设置一条什么样的COOKIE数据；<br><strong>问题:</strong></li>
 <li>ssetcookie后，什么时候才能通过$_COOKIE变量获得该数据？</li>
 </ul>
@@ -171,7 +171,7 @@
 <blockquote>
 <p><strong>注意点:</strong></p>
 <p>通过设置一个过了期的时间，可以实现删除某条已有的COOKIE数据。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; setcookie( &apos;name&apos;, &apos;jsoncc&apos;, time() - 1 );//表示指定一个过期的时间,这样可以达到删除这条cookie数据</span><br><span class="line">&gt; &gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; &gt; setcookie( &apos;name&apos;, &apos;jsoncc&apos;, time() + 1 );//表示指定一个过期的时间,这样可以达到删除这条cookie数据</span><br><span class="line">&gt; &gt;</span><br></pre></td></tr></table></figure>
 </blockquote>
 </blockquote>
 <blockquote>
